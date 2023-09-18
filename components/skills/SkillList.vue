@@ -10,12 +10,12 @@
     </ul>
 </template>
 <script setup lang="ts">
+
 defineProps({
     skills:{
-        type:Array
+        type:[]
     }
 })
-
 </script>
 
 <style lang="scss">
@@ -35,7 +35,7 @@ defineProps({
                 position: relative;
                 border-radius: 100%;
                 border: 1px solid rgba(255, 255, 255, 0.219);
-                background: rgba(255, 255, 255, 0.158);
+                background: rgba(255, 255, 255, 0.068);
                     .exp_count{
                         position: absolute;
                         bottom: 11px;
