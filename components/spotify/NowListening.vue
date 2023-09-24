@@ -25,13 +25,14 @@ const data = props.data;
 
 <style lang="scss">
   .spotify{
+    margin:50px auto 0 auto;
     max-width: 250px;
     width: 250px;
     max-height: 70px;
     height: auto;
     border: 1px solid rgba(29,208,93,0.6);
     border-radius: 5px;
-    background: rgba(29,208,93,0.20);
+    background: rgba(29,208,93,0.10);
     .current-music-not{
       text-align: center;
       color: white;

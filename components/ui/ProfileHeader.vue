@@ -1,53 +1,62 @@
 <template>
     <div class="content">
         <section class="profile-header">
-            <img class="profile-images" src="@/assets/images/profile.jpeg" />
+            <img class="profile-images" src="/profile.jpeg" alt="profile photo" />
             <div class="profile-info">
                 <h1 class="name">Eral Keskinkurt</h1>
-                <div><EnvelopeLogo class="envelope" size="25"/> <span class="email">eralkeskinkurt@gmail.com</span></div>
+                <div><EnvelopeLogo class="envelope" size="18"/><span class="email">eralkeskinkurt@gmail.com</span></div>
                 <ul class="social-media">
                     <li><a href="https://www.instagram.com/eral_keskinkurt/" target="_blank"><InstagramLogo class="instagram"  size="25"/></a></li>
                     <li><a href="https://www.facebook.com/eral.keskinkurt.94/" target="_blank"><FacebookLogo class="facebook" size="25"/></a></li>
                     <li><a href="https://github.com/EralKeskinkurt" target="_blank"><GithubLogo class="github" size="25"/></a></li>
                     <li><a href="https://www.linkedin.com/in/eral-keskinkurt-255b27255/" target="_blank"><LinkedinLogo class="linkedin" size="25"/></a></li>
+                    <li><a href="https://www.buymeacoffee.com/eralkeskin" target="_blank"><BuyCoffee class="buy-coffee" size="20"/></a></li>
                 </ul>
-                <NowListening :data="nowPlayingData" />
             </div>
         </section>
+        <SkillSlide />
+        <NowListening :data="nowPlayingData" />
     </div>
 </template>
 
 <script setup lang="ts">
 import NowListening from "@/components/spotify/NowListening.vue"
 import { Icon, SpotifyNowListening } from '#components'
+import SkillSlide from "~/components/ui/SkillSlide.vue";
 const nowPlayingData = await $fetch('/api/now-playing');
 const InstagramLogo = h(Icon, { name: "ph:instagram-logo"})
 const FacebookLogo = h(Icon, { name: 'ph:facebook-logo' })
 const GithubLogo = h(Icon, { name: 'ph:github-logo' })
 const LinkedinLogo = h(Icon, { name: 'ph:linkedin-logo' })
 const EnvelopeLogo = h(Icon, { name: 'ph:envelope' })
+const BuyCoffee = h(Icon, { name: 'simple-icons:buymeacoffee' })
+
 // ph:instagram-logo ph:facebook-logo pajamas:github ph:linkedin-logo ph:envelope
 </script>
 
 <style lang="scss">
     .profile-header{
         display: flex;
-        width: auto;
-        align-self: flex-start;
-        justify-content: flex-start;
-        padding-left: 20px;
+        box-sizing: border-box;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 30px;
         gap: 20px;
         .envelope{
             color: #ece033;
         }
+        .buy-coffee{
+          color: #b0a726;
+        }
         .email{
             color:white;
             font-size: 0.8rem;
+            margin-left: 2px;
         }
         .profile-images{
-            max-width: 150px;
             width: 150px;
-            max-height: 175px;
+            aspect-ratio: 1/1;
             object-fit: cover;
             border-radius: 10px;
             box-shadow: 0 0 7px 1px rgba(255, 255, 255, 0.185);
@@ -60,12 +69,12 @@ const EnvelopeLogo = h(Icon, { name: 'ph:envelope' })
         .profile-info{
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             gap: 10px;
+
             .social-media{
                 display: flex;
                 align-items: center;
-                justify-content: flex-start;
                 gap: 15px;
                 li{
                     cursor: pointer;

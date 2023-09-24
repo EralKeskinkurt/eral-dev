@@ -4,19 +4,27 @@
             <li><NuxtLink class="nav-link" active-class="active" to="/" ><HouseIcon size="25" /><b class="link-hover-info">Home</b></NuxtLink></li>
             <li><NuxtLink class="nav-link" active-class="active" to="/repositories"><RepositoryIcon size="25" /><b class="link-hover-info">Repositories</b></NuxtLink></li>
             <li><NuxtLink class="nav-link" active-class="active" to="/blogs"><BlogIcon size="25" /><b class="link-hover-info">Blogs</b></NuxtLink></li>
-            <li><NuxtLink class="nav-link" active-class="active" to="/skills"><SkillIcon size="25" /><b class="link-hover-info">Skills</b></NuxtLink></li>
+            <li v-if="isTrue"><button @click="useRouter().back()" class="nav-link"><BackIcon size="23" /><b class="link-hover-info">Back</b></button></li>
         </ul>
     </nav>
 </template>
 
 <script setup lang="ts">
 import { Icon } from '#components'
+import {useRouter} from "#app";
 const BlogIcon = h(Icon, { name: 'carbon:blog' })
-const AboutIcon = h(Icon, { name: 'material-symbols:account-box' })
-const SkillIcon = h(Icon, { name: 'ph:stack-fill' })
+const BackIcon = h(Icon, { name: 'ion:ios-backspace' })
 const HouseIcon = h(Icon, { name: 'ph:house-simple' })
 const RepositoryIcon = h(Icon, { name: 'ri:git-repository-line' })
-
+const isTrue = ref(false)
+watchEffect(() => {
+  const {path} = useRoute()
+  if(path.slice(0, 6) == '/blogs' && path.length > 7){
+    isTrue.value = true
+  }else{
+    isTrue.value = false
+  }
+})
 </script>
 
 <style lang="scss">
@@ -49,6 +57,10 @@ const RepositoryIcon = h(Icon, { name: 'ri:git-repository-line' })
             .nav-link{
                 text-decoration: none;
                 color: white;
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-family: 'Source Code Pro', monospace;
                 position: relative;     
                 &:hover{
                     transition: all 0.6s;

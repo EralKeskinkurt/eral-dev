@@ -1,7 +1,7 @@
 <template>
     <div class="content">
       <div class="repository">
-        <h1 class="repository-title">My <strong>repositories</strong></h1>
+        <h1 class="repository-title"><strong>Repositories</strong></h1>
         <RepositoryList :repositories="repositories" />
       </div>
     </div>
@@ -9,10 +9,11 @@
 
 <script lang="ts" setup>
 import RepositoryList from '~/components/repositories/RepositoryList.vue';
+import {GITHUB_AUTHORIZATION} from "~/composables/services/spotify/constants";
 const repositories = await $fetch('https://api.github.com/users/EralKeskinkurt/repos', {
   method:'GET',
   headers:{
-    Authorization:'Bareer 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',
+    Authorization:GITHUB_AUTHORIZATION,
     "X-GitHub-Api-Version": "2022-11-28"
   }
 })

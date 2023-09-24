@@ -14,7 +14,7 @@ import ProfileHeader from "@/components/ui/ProfileHeader.vue"
 <style lang="scss">
 .layout{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 30% calc(70% - 80px);
     gap: 80px;
     justify-content: start;
     position: relative;

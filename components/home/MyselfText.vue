@@ -11,7 +11,6 @@
 
 <style lang="scss">
     .myself{
-        padding: 20px;
         .myself-text{
             display: flex;
             flex-direction: column;

@@ -28,11 +28,11 @@ const ForkIcon = h(Icon, { name: 'tabler:git-fork' })
 const colorLang = (lang:string) => {
     switch (lang) {
         case "Astro":
-            return "#7c4225"
+            return "#FF5A03"
         case "Vue":
             return "#41b883"
         default:
-            return "#FFF";
+            return "#ffffff80";
     }
 }
 </script>
@@ -41,14 +41,11 @@ const colorLang = (lang:string) => {
 .repository-list{
         padding-top: 30px;
         padding-bottom: 20px;
-        max-width: auto;
-        display: flex;
-        flex-wrap: wrap;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 25px;
-        background: transparent;
         .repository-item{
-            width: 300px;
-            background: rgba(255, 255, 255, 0.055);
             height: 80px;
             border: 1px solid rgba(255, 255, 255, 0.322);
             border-radius: 5px;
@@ -56,7 +53,8 @@ const colorLang = (lang:string) => {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            justify-content: space-between;
+            position: relative;
+            justify-content: flex-start;
             gap: 9px;
             .repo-name{
                 font-size: 0.8rem;
@@ -69,12 +67,14 @@ const colorLang = (lang:string) => {
                 }
             }
             .repo-desc{
+                width: 100%;
                 color: rgba(255, 255, 255, 0.459);
                 font-size: 0.7rem;
                 font-family: 'Inclusive Sans', sans-serif;
-                max-height: 37px;
+                max-height: 40px;
                 line-height: 0.9rem;
                 overflow: hidden;
+                text-overflow: ellipsis;
             }
             .repo-actions{
                 display: flex;
@@ -82,6 +82,15 @@ const colorLang = (lang:string) => {
                 justify-content: space-between;
                 width: 100%;
                 gap: 10px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 6px 10px;
+                background: black;
+                box-sizing: border-box;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                z-index: 10;
                 font-size: 0.8rem;
                 .repo-star{
                     display: flex;

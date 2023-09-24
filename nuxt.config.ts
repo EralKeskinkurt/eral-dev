@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['nuxt-icon'],
+  modules: ['nuxt-icon','@nuxt/content'],
   css: [
     // Load a Node.js module directly (here it's a Sass file).
     '@/assets/css/global.scss'
@@ -11,5 +11,8 @@ export default defineNuxtConfig({
   },
   typescript: {
     strict: true
+  },
+  content: {
+
   }
 })
