@@ -33,11 +33,22 @@ const returnDescription = async (pageLink:string) => {
 
 <style lang="scss">
   .blog{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+      @media screen and (max-width: 950px) {
+        align-items: center;
+      }
     .blogs-title{
       color:white;
       font-size: 1.3rem;
       font-weight: 600;
       line-height: 1.6rem;
+      @media screen and (max-width: 950px) {
+        text-align: center;
+        margin-top: 50px;
+      }
       strong{
         color: rgba(29,208,93);
       }
@@ -51,10 +62,13 @@ const returnDescription = async (pageLink:string) => {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+        @media screen and (max-width: 950px) {
+          align-items: center;
+        }
         .blog-navbar-link{
           box-sizing: border-box;
           background: black;
-          width: 25rem;
+          width: auto;
           border: 1px solid #ffffff80;
           border-radius: 5px;
           transition: all 0.5s ease;

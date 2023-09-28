@@ -4,7 +4,7 @@
             <li><NuxtLink class="nav-link" active-class="active" to="/" ><HouseIcon size="25" /><b class="link-hover-info">Home</b></NuxtLink></li>
             <li><NuxtLink class="nav-link" active-class="active" to="/repositories"><RepositoryIcon size="25" /><b class="link-hover-info">Repositories</b></NuxtLink></li>
             <li><NuxtLink class="nav-link" active-class="active" to="/blogs"><BlogIcon size="25" /><b class="link-hover-info">Blogs</b></NuxtLink></li>
-            <li v-if="isTrue"><button @click="useRouter().back()" class="nav-link"><BackIcon size="23" /><b class="link-hover-info">Back</b></button></li>
+            <li v-if="isTrue"><a @click="useRouter().back()" class="nav-link"><BackIcon size="25" /><b class="link-hover-info">Back</b></a></li>
         </ul>
     </nav>
 </template>
@@ -13,7 +13,7 @@
 import { Icon } from '#components'
 import {useRouter} from "#app";
 const BlogIcon = h(Icon, { name: 'carbon:blog' })
-const BackIcon = h(Icon, { name: 'ion:ios-backspace' })
+const BackIcon = h(Icon, { name: 'iconamoon:backspace-thin' })
 const HouseIcon = h(Icon, { name: 'ph:house-simple' })
 const RepositoryIcon = h(Icon, { name: 'ri:git-repository-line' })
 const isTrue = ref(false)
@@ -31,6 +31,7 @@ watchEffect(() => {
 .navbar{
     position: fixed;
     width: 100%;
+    z-index: 999;
     height: auto;
     bottom: 20px;
     display: flex;

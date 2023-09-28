@@ -1,6 +1,6 @@
 <template>
     <div class="container layout">
-        <ProfileHeader />
+        <ProfileHeader/>
         <slot/>
         <Navbar />
     </div>
@@ -18,5 +18,9 @@ import ProfileHeader from "@/components/ui/ProfileHeader.vue"
     gap: 80px;
     justify-content: start;
     position: relative;
+  @media screen and (max-width: 950px) {
+    grid-template-columns: 1fr;
+    gap: 1px;
+  }
 }
 </style>

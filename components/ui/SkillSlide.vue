@@ -36,7 +36,7 @@ const MongoIcon = h(Icon, { name: 'bxl:mongodb' })
 
 <style scoped lang="scss">
 .skill-sec{
-  width: 75%;
+  width: 277px;
   height: 30px;
   display: flex;
   margin:0 auto ;

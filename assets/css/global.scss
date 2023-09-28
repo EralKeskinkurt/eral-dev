@@ -5,6 +5,7 @@
 $containerbg:#000000;
 :root{
     background-color: $containerbg;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -14,6 +15,9 @@ body{
         height: 80vh;
         margin: 0 auto;
         padding-bottom: 30px;
+        @media screen and (max-width: 950px) {
+            max-width: 950px;
+        }
     }
     .content{
         width: 100%;
@@ -25,6 +29,12 @@ body{
         justify-content: flex-start;
         align-items: flex-start;
         gap:20px;
+        @media screen and (max-width: 950px) {
+            align-items: center;
+        }
+        @media screen and (max-width: 1150px) {
+            align-items: flex-start;
+        }
     }
 }
 

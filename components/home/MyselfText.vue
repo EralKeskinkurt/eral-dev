@@ -16,6 +16,9 @@
             flex-direction: column;
             line-height: 1.6rem;
             gap: 10px;
+            @media screen and (max-width: 950px) {
+              padding: 3rem;
+            }
             .title-text{
                 font-size: 1.3rem;
                 font-weight: 600;

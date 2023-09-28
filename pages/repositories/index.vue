@@ -21,11 +21,22 @@ const repositories = await $fetch('https://api.github.com/users/EralKeskinkurt/r
 
 <style lang="scss">
 .repository{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @media screen and (max-width: 950px) {
+    align-items: center;
+  }
     .repository-title{
         color:white;
         font-size: 1.3rem;
         font-weight: 600;
         line-height: 1.6rem;
+        @media screen and (max-width: 950px) {
+          text-align: center;
+          margin-top: 50px;
+        }
         strong{
             color: rgba(29,208,93);
         }
