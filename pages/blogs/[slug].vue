@@ -68,7 +68,7 @@ onMounted(async () => {
     img{
       width: auto;
       height: 20rem;
-
+      object-fit: contain;
       border: none !important;
       text-align: start;
     }
