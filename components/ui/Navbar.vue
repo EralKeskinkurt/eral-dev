@@ -4,7 +4,7 @@
             <li><NuxtLink class="nav-link" active-class="active" to="/" ><HouseIcon size="25" /><b class="link-hover-info">Home</b></NuxtLink></li>
             <li><NuxtLink class="nav-link" active-class="active" to="/repositories"><RepositoryIcon size="25" /><b class="link-hover-info">Repositories</b></NuxtLink></li>
             <li><NuxtLink class="nav-link" active-class="active" to="/blogs"><BlogIcon size="25" /><b class="link-hover-info">Blogs</b></NuxtLink></li>
-            <li v-if="isTrue"><a @click="useRouter().back()" class="nav-link"><BackIcon size="25" /><b class="link-hover-info">Back</b></a></li>
+            <li v-if="isTrue"><a @click="useRouter().push('/blogs')" class="nav-link"><BackIcon size="25" /><b class="link-hover-info">Back</b></a></li>
         </ul>
     </nav>
 </template>
