@@ -13,4 +13,8 @@ It is a website created for promotional purposes.
 It is a website created for promotional purposes.
 
 !["sdlfsdlşf"](../../public/koz-taahhut.png)
+### Segan Makina
+It is a website created for promotional purposes.
+
+!["sdlfsdlşf"](../../public/segan.png)
 
