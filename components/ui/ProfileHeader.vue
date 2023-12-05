@@ -2,7 +2,7 @@
   <div class="content">
     <div class="sticky-content">
       <section class="profile-header">
-        <img class="profile-images" src="/profile.jpeg" alt="profile photo"/>
+        <img class="profile-images" src="/profile.jpg" alt="profile photo"/>
         <div class="profile-info">
           <h1 class="name">Eral Keskinkurt</h1>
           <div>
